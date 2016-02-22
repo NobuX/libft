@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcarre <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: pcarre </var/mail/pcarre>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/16 16:33:30 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/22 17:20:07 by pcarre           ###   ########.fr       */
+/*   Created: 2016/02/22 17:13:27 by pcarre            #+#    #+#             */
+/*   Updated: 2016/02/22 17:16:10 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Remplace les octets du bloc pointe par s par des \0
+** Affiche un carractere sur le fd passé en parametre.
 */
 
-#include "libft.h"
+#include <unistd.h>
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	ft_memset(s, 0, n);
+	write(fd, &c, 1);
 }

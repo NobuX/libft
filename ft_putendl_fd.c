@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcarre <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: pcarre </var/mail/pcarre>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/16 16:33:30 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/22 17:20:07 by pcarre           ###   ########.fr       */
+/*   Created: 2016/02/22 17:26:01 by pcarre            #+#    #+#             */
+/*   Updated: 2016/02/22 17:50:48 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Remplace les octets du bloc pointe par s par des \0
+** affiche une chainne de caracteres sur le fd en parametre suivi d'un \n.
 */
 
 #include "libft.h"
+#include <unistd.h>
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	ft_memset(s, 0, n);
+	if (!(s))
+		ft_error_null("ft_putendl_fd");
+	else
+	{
+		write(fd, s, ft_strlen(s));
+		write(fd, "\n", 1);
+	}
 }

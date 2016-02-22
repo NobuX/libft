@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcarre <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: pcarre </var/mail/pcarre>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/16 16:33:30 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/22 17:20:07 by pcarre           ###   ########.fr       */
+/*   Created: 2016/02/22 16:04:36 by pcarre            #+#    #+#             */
+/*   Updated: 2016/02/22 17:23:57 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Remplace les octets du bloc pointe par s par des \0
+** Compte le nombre d'octet de la chainne passée en parametres.
 */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+size_t	ft_strlen(const char *s)
 {
-	ft_memset(s, 0, n);
+	size_t	i;
+
+	i = 0;
+	while (s[i++])
+		;
+	return (i);
 }

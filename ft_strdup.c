@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcarre <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: pcarre </var/mail/pcarre>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/16 16:22:12 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/22 17:22:34 by pcarre           ###   ########.fr       */
+/*   Created: 2016/02/22 16:07:54 by pcarre            #+#    #+#             */
+/*   Updated: 2016/02/22 17:23:46 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Rempli les n premiers octets de la cible pointee par b avec des caracteres c
-** Renvoi un pointeur sur b.
+** La fonction alloue assez de mémoire pour une copie de s1, la fait et renvoi
+** un pointeur sur elle.
+** Si la mémoire est insuffisante, return NULL et errno est réglé sur ENOMEM.
 */
+
+// stand by vis a vis des fcts malloc
 
 #include "libft.h"
 
-void	*memset(void *b, int c, size_t len)
+char	*ft_strdup(const char *s1)
 {
 	char	*str;
+	int		i;
 
-	str = (char *)b;
-	while (len > 0)
-		str[--len] = c;
-	return (b);
+
+
 }

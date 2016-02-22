@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_error_malloc.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcarre <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: pcarre </var/mail/pcarre>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/16 16:33:30 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/22 17:20:07 by pcarre           ###   ########.fr       */
+/*   Created: 2016/02/22 17:40:26 by pcarre            #+#    #+#             */
+/*   Updated: 2016/02/22 17:45:10 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Remplace les octets du bloc pointe par s par des \0
+** Affiche les messages d'error en rapport avec malloc.
 */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_error_malloc(char const *s)
 {
-	ft_memset(s, 0, n);
+	ft_putstr_fd("\033[41;1merror : ", 2);
+	ft_putstr_fd(s, 2);
+	ft_putendl_fd(" : memory allocation failled.\033[0m", 2);
+
 }

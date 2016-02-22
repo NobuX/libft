@@ -6,7 +6,7 @@
 /*   By: pcarre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 17:02:07 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/16 18:31:17 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/02/22 17:22:15 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Return un pointeur sur dst.
 */
 
-#include <string.h>
+#include "libft.h"
 
 void	*memmove(void *dst, const void *src, size_t len)
 {
