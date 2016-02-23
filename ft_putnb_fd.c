@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_putnb_fd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcarre </var/mail/pcarre>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/22 16:29:14 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/23 15:21:04 by pcarre           ###   ########.fr       */
+/*   Created: 2016/02/23 14:57:36 by pcarre            #+#    #+#             */
+/*   Updated: 2016/02/23 15:02:36 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Alloue et retourne une zone de mémoire "fraiche". la mémoire allouée est
-** initialisée a 0. Si l'allocation échoue, renvoie NULL.
-*/
-
 #include "libft.h"
-#include <stdlib.h>
+#include <unistd.h>
 
-void	*ft_memalloc(size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	void	*mem;
-
-	if ((mem = (void *)malloc(size)))
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	else if (n > 9)
 	{
-		ft_bzero(mem, size);
-		return (mem);
+		ft_putnbr_fd(n / 10);
+		ft_putnbr_fd(n % 10);
 	}
+	else if (n >= 0 && n <= 9)
+		ft_putchar_fd(n + '0');
 	else
-		ft_error_malloc("ft_memalloc");
-	return (NULL);
+	{
+		ft_putchar_fd('-');
+		ft_putnbr_fd(-n);
+	}
 }

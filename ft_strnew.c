@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcarre </var/mail/pcarre>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/22 16:29:14 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/23 15:21:04 by pcarre           ###   ########.fr       */
+/*   Created: 2016/02/23 15:51:06 by pcarre            #+#    #+#             */
+/*   Updated: 2016/02/23 15:58:06 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Alloue et retourne une zone de mémoire "fraiche". la mémoire allouée est
-** initialisée a 0. Si l'allocation échoue, renvoie NULL.
+** Alloue avec malloc et return une chaine de caractères fraiche terminée par
+** un '\0'. Chaque caractère de la chaine est initialité a '\0'.
+** Si l'allocation échoue, return NULL.
 */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	*ft_memalloc(size_t size)
+char	*ft_strnew(size_t size)
 {
-	void	*mem;
-
-	if ((mem = (void *)malloc(size)))
-	{
-		ft_bzero(mem, size);
-		return (mem);
-	}
-	else
-		ft_error_malloc("ft_memalloc");
-	return (NULL);
+	return ((char*)ft_memalloc(size + 1));
 }
