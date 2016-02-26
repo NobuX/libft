@@ -6,7 +6,7 @@
 /*   By: pcarre </var/mail/pcarre>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 15:17:54 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/22 17:21:33 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/02/26 17:36:52 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const char	*str;
-	size_t		i;
+	unsigned char	*str;
+	size_t			i;
 
 	str = (unsigned char*)s;
 	i = -1;

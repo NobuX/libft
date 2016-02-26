@@ -6,7 +6,7 @@
 /*   By: pcarre </var/mail/pcarre>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 15:03:03 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/23 16:25:33 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/02/26 17:57:57 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,20 @@ static int	ft_int_len(int n)
 		n = n / 10;
 		len++;
 	}
+	return (len);
 }
 
-char		*ft_itoa(int n);
+char		*ft_itoa(int n)
 {
 	int		len;
 	int		tmp;
 	char	*str;
 
+	if (n == -2147483648)
+		ft_strdup("-2147483648");
 	len = ft_int_len(n);
 	tmp = n;
-	if (n == -2747483648)
-		ft_strdup("-2147483648");
-	if (str = ft_strnew(len))
+	if ((str = ft_strnew(len)))
 	{
 		if (n < 0)
 			tmp = -tmp;

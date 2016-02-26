@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnb_fd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcarre </var/mail/pcarre>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/22 16:07:54 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/26 16:35:01 by pcarre           ###   ########.fr       */
+/*   Created: 2016/02/23 14:57:36 by pcarre            #+#    #+#             */
+/*   Updated: 2016/02/26 16:29:23 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** La fonction alloue assez de mémoire pour une copie de s1, la fait et renvoi
-** un pointeur sur elle.
-** Si la mémoire est insuffisante, return NULL et errno est réglé sur ENOMEM.
-*/
-
 #include "libft.h"
-#include <stdlib.h>
+#include <unistd.h>
 
-char	*ft_strdup(const char *s1)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-	int		i;
-	int		size;
-
-	i = -1;
-	size = ft_strlen(s1);
-	if ((str = ft_strnew(size)))
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	else if (n > 9)
 	{
-		while (str[++i])
-			str[i] = s1[i];
-		return (str);
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
-	return (NULL);
+	else if (n >= 0 && n <= 9)
+		ft_putchar_fd(n + '0', fd);
+	else
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
 }
