@@ -1,32 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnb_fd.c                                      :+:      :+:    :+:   */
+/*   ft_bitcount.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcarre </var/mail/pcarre>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/23 14:57:36 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/23 15:02:36 by pcarre           ###   ########.fr       */
+/*   Created: 2016/03/08 15:29:14 by pcarre            #+#    #+#             */
+/*   Updated: 2016/03/08 16:30:01 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <unistd.h>
+/*
+** Retourne le nombre de bits splitted par le caractere c dans la chaine s.
+*/
 
-void	ft_putnbr_fd(int n, int fd)
+#include "libft.h"
+#include <stdlib.h>
+
+size_t	ft_bitcount(char const *s, char c)
 {
-	if (n == -2147483648)
-		write(fd, "-2147483648", 11);
-	else if (n > 9)
+	int		is_b;
+	size_t	bit;
+	size_t	i;
+
+	i = 0;
+	bit = 0;
+	is_b = 0;
+	while (s[i])
 	{
-		ft_putnbr_fd(n / 10);
-		ft_putnbr_fd(n % 10);
+		if (s[i] == c && is_b)
+			is_b = 0;
+		if (s[i] != c && !is_b)
+		{
+			bit++;
+			is_b = 1;
+		}
+		while (s[i] && s[i] == c && !is_b)
+			i++;
+		while (s[i] && s[i] != c && is_b)
+			i++;
 	}
-	else if (n >= 0 && n <= 9)
-		ft_putchar_fd(n + '0');
-	else
-	{
-		ft_putchar_fd('-');
-		ft_putnbr_fd(-n);
-	}
+	return (bit);
 }

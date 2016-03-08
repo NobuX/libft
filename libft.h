@@ -6,7 +6,7 @@
 /*   By: pcarre </var/mail/pcarre>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 15:52:46 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/26 16:22:17 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/03/08 16:20:07 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,8 @@ char	*ft_itoa(int n);
 void	*ft_memalloc(size_t size);
 void	*ft_memccpy(void *restrict dst, const void *restrict src, int c,\
 				size_t n);
+char	**ft_strsplit(char const *s, char c);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+size_t	ft_bitcount(char const *s, char c);
 
 #endif
