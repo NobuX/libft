@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/22 16:29:14 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 15:52:56 by pcarre           ###   ########.fr       */
+/*   Created: 2016/03/10 17:51:21 by pcarre            #+#    #+#             */
+/*   Updated: 2016/03/10 19:13:45 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Alloue et retourne une zone de mémoire "fraiche". la mémoire allouée est
-** initialisée a 0. Si l'allocation échoue, renvoie NULL.
+** Applique la fonction f() a chaque caractere de la chainne s en précisant
+** son index en premier argument.
+** Chaque caractere est passé par adresse a la fonction f pour etre modifié
+** si nécéssaire.
 */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "stdlib.h"
 
-void	*ft_memalloc(size_t size)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	void	*mem;
+	unsigned int	i;
 
-	if ((mem = (void *)malloc(size)))
-	{
-		ft_bzero(mem, size);
-		return (mem);
-	}
-	else
-		ft_error_malloc("ft_memalloc");
-	return (NULL);
+	i = 0;
+	while (*s)
+		f(i++, s++);
 }

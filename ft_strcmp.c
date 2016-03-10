@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/22 16:29:14 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 15:52:56 by pcarre           ###   ########.fr       */
+/*   Created: 2016/03/10 18:42:46 by pcarre            #+#    #+#             */
+/*   Updated: 2016/03/10 19:05:42 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Alloue et retourne une zone de mémoire "fraiche". la mémoire allouée est
-** initialisée a 0. Si l'allocation échoue, renvoie NULL.
-*/
-
 #include "libft.h"
-#include <stdlib.h>
+#include <string.h>
 
-void	*ft_memalloc(size_t size)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	void	*mem;
+	size_t	s1_l;
+	size_t	s2_l;
+	size_t	n;
 
-	if ((mem = (void *)malloc(size)))
-	{
-		ft_bzero(mem, size);
-		return (mem);
-	}
-	else
-		ft_error_malloc("ft_memalloc");
-	return (NULL);
+	s1_l = ft_strlen(s1);
+	s2_l = ft_strlen(s2);
+	n = (s1_l >= s2_l ? s1_l : s2_l);
+	return (ft_memcmp((const void*)s1, (const void*)s2, n));
 }

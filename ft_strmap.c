@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcarre <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/10 15:44:49 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 15:46:07 by pcarre           ###   ########.fr       */
+/*   Created: 2016/03/10 18:13:28 by pcarre            #+#    #+#             */
+/*   Updated: 2016/03/10 18:31:23 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** La fonction alloue assez de mémoire pour une copie de s1, la fait et renvoi
-** un pointeur sur elle.
-** Si la mémoire est insuffisante, return NULL et errno est réglé sur ENOMEM.
+** Applique la fonction f a chaque caractere de la chainne de caracteres
+** passée en paramètre pour créer une nouvelle chaine fraiche résultant
+** des applications successives de f.
 */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strdup(const char *s1)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
 	char	*str;
-	int		i;
-	int		size;
+	size_t	i;
 
 	i = -1;
-	size = ft_strlen(s1);
-	if ((str = ft_strnew(size)))
+	if ((str = ft_strnew(ft_strlen(s))))
 	{
-		while (str[++i])
-			str[i] = s1[i];
+		while (s[++i])
+			str[i] = f(s[i]);
 		return (str);
 	}
 	return (NULL);

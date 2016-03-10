@@ -6,7 +6,7 @@
 /*   By: pcarre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 16:50:07 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/26 17:52:35 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/03/10 16:05:00 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src, int c,\
 {
 	unsigned char	*dcp;
 	unsigned char	*scp;
-	size_t		i;
+	size_t			i;
 
 	i = -1;
 	dcp = (unsigned char*)dst;

@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/22 15:40:44 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 15:50:12 by pcarre           ###   ########.fr       */
+/*   Created: 2016/03/10 18:32:50 by pcarre            #+#    #+#             */
+/*   Updated: 2016/03/10 19:14:57 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Compare les n premiers éléments de deux chaines de caractères.
-** Return 0 si elles sont identiques ou la difference entre la 1ere et la 2eme.
-*/
-
 #include "libft.h"
+#include <stdlib.h>
 
-int		memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
-	size_t			i;
+	char			*str;
+	unsigned int	i;
 
-	if (n == 0)
-		return (0);
-	str1 = (unsigned char*)s1;
-	str2 = (unsigned char*)s2;
 	i = -1;
-	while (++i < n)
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-	return (0);
+	if ((str = ft_strnew(ft_strlen(s))))
+	{
+		while (s[++i])
+			str[i] = f(i, s[i]);
+		return (str);
+	}
+	return (NULL);
 }

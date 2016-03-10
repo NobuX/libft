@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcarre </var/mail/pcarre>                  +#+  +:+       +#+        */
+/*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 14:12:57 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/08 16:21:04 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/03/10 16:03:19 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 ** terminées par '\0', résultant de la découpe de s selon le caractere c.
 ** Si l'allocation échoue, return NULL.
 */
-
 
 #include "libft.h"
 #include <stdlib.h>

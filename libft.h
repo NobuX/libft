@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcarre </var/mail/pcarre>                  +#+  +:+       +#+        */
+/*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 15:52:46 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/08 16:20:07 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/03/10 19:15:56 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,16 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src, int c,\
 char	**ft_strsplit(char const *s, char c);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 size_t	ft_bitcount(char const *s, char c);
+void	ft_memdel(void **ap);
+void	ft_strdel(char **as);
+void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int		ft_strcmp(const char *s1, const char *s2);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
 
 #endif
