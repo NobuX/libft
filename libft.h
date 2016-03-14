@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 15:52:46 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/14 18:55:26 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/03/14 19:51:51 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,7 @@ int		ft_ispunct(int c);
 int		ft_isspace(int c);
 int		ft_isupper(int c);
 int		ft_isxdigit(int c);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
 #endif
