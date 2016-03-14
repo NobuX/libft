@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 18:04:46 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/11 18:40:16 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/03/14 18:59:25 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
-	size_t dst_end;
+	size_t	dst_end;
 
 	i = 0;
 	j = 0;

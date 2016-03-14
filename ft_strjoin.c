@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 17:13:12 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/11 17:52:45 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/03/14 18:58:33 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 ** Alloue et retourne une chaine de caracteres fraiches terminée par '\0'
 ** resultant de la concaténation de s1 et s2.
 ** Si l'allocation échoue, return NULL
-*/ 
+*/
 
 #include "libft.h"
 #include <stdlib.h>

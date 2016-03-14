@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 17:59:00 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/11 18:04:27 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/03/14 18:57:38 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ** et y ajoute le '\0'. La fonction ne copie pas plus de n caracteres de s2.
 ** s1 doit etre suffisament grande pour contenir s2.
 ** Retourne la chaine s1.
-*/  
+*/
 
 #include "libft.h"
 
