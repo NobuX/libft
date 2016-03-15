@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 15:29:14 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 15:57:10 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/03/15 15:57:57 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 */
 
 #include "libft.h"
-#include <stdlib.h>
 
 size_t	ft_bitcount(char const *s, char c)
 {
