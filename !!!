@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 15:52:46 by pcarre            #+#    #+#             */
-/*   Updated: 2016/04/01 16:25:01 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/03/31 19:11:32 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 void				*ft_memccpy(void *restrict dst, const void *restrict src,
 					int c, size_t n);
-void				*ft_memdup(void const *src, size_t size);
+void				*ft_memdup(void *src, size_t size);
 
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
@@ -98,10 +98,5 @@ int					ft_toupper(int c);
 int					ft_isoperator(int c);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
-void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 #endif

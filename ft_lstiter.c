@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/10 15:13:18 by pcarre            #+#    #+#             */
-/*   Updated: 2016/04/01 14:19:49 by pcarre           ###   ########.fr       */
+/*   Created: 2016/04/01 15:20:54 by pcarre            #+#    #+#             */
+/*   Updated: 2016/04/01 16:16:15 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+/*
+** Parcour la liste en appliquant a chaque maillon la fonction f.
+*/
 
-void	ft_memdel(void **ap)
+#include "libft.h"
+
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	free(*ap);
-	*ap = NULL;
+	while (lst)
+	{
+		f(lst);
+		lst = lst->next;
+	}
 }

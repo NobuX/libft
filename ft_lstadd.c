@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/10 15:13:18 by pcarre            #+#    #+#             */
-/*   Updated: 2016/04/01 14:19:49 by pcarre           ###   ########.fr       */
+/*   Created: 2016/04/01 15:14:33 by pcarre            #+#    #+#             */
+/*   Updated: 2016/04/01 15:19:21 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+/*
+** Ajoute l'element en tete de la list.
+*/
 
-void	ft_memdel(void **ap)
+#include "libft.h"
+
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	free(*ap);
-	*ap = NULL;
+	new->next = *alst;
+	*alst = new;
 }
