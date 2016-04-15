@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/10 18:13:28 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 18:31:23 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/15 20:26:59 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,10 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	size_t	i;
 
 	i = -1;
-	if ((str = ft_strnew(ft_strlen(s))))
-	{
-		while (s[++i])
-			str[i] = f(s[i]);
-		return (str);
-	}
-	return (NULL);
+	if (!s || !f || !(str = ft_strdup(s)))
+		return (NULL);
+	while (str && str[++i])
+		str[i] = f(str[i]);
+	str[i] = '\0';
+	return (str);
 }
