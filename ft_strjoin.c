@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 17:13:12 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/14 18:58:33 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/15 21:41:02 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 
-	if (!(s1))
-		return (ft_strdup(s2));
-	if (!(s2))
-		return (ft_strdup(s1));
-	if ((str = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
-	{
-		str = ft_strcpy(str, s1);
-		str = ft_strcat(str, s2);
-		return (str);
-	}
-	return (NULL);
+	if (!s1 || !s2 || !(str = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1)))
+		return (NULL);
+	str = ft_strdup(s1);
+	str = ft_strcat(str, s2);
+	str[ft_strlen(str)] = '\0';
+	return (str);
 }

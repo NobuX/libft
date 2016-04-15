@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 14:50:20 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 15:56:06 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/15 22:57:58 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,12 @@
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
-	size_t	i;
 
-	if (!s)
+	if (!s || !(sub = ft_strnew(len)))
 		return (NULL);
-	i = -1;
-	if ((sub = ft_strnew(len)))
-	{
-		while (++i < len)
-			sub[i] = s[start + i];
-		return (sub);
-	}
-	return (NULL);
+	while (start--)
+		s++;
+	ft_strncpy(sub, s, len);
+	sub[len] = '\0';
+	return (sub);
 }
