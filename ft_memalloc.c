@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 16:29:14 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 15:52:56 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/01 16:39:45 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ void	*ft_memalloc(size_t size)
 		return (mem);
 	}
 	else
-		ft_error_malloc("ft_memalloc");
-	return (NULL);
+		return (NULL);
 }

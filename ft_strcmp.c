@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/10 18:42:46 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 19:05:42 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/04 15:44:54 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int		ft_strcmp(const char *s1, const char *s2)
 	s1_l = ft_strlen(s1);
 	s2_l = ft_strlen(s2);
 	n = (s1_l >= s2_l ? s1_l : s2_l);
-	return (ft_memcmp((const void*)s1, (const void*)s2, n));
+	return (ft_memcmp(s1, s2, n));
 }

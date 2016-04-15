@@ -6,13 +6,13 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 19:59:07 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 15:53:17 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/15 18:39:37 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *restrict dst, const char *restrict src, size_t n)
+char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
 	size_t	i;
 

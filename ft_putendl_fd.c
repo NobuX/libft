@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcarre <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 17:26:01 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 15:48:12 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/01 17:08:56 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	if (!(s))
-		ft_error_null("ft_putendl_fd");
-	else
-	{
-		write(fd, s, ft_strlen(s));
-		write(fd, "\n", 1);
-	}
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }

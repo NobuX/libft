@@ -6,7 +6,7 @@
 /*   By: pcarre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 16:50:07 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 16:05:00 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/15 18:41:15 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@
 
 #include <string.h>
 
-void	*ft_memccpy(void *restrict dst, const void *restrict src, int c,\
-		size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	unsigned char	*dcp;
 	unsigned char	*scp;
 	size_t			i;
 
-	i = -1;
+	i = 0;
 	dcp = (unsigned char*)dst;
 	scp = (unsigned char*)src;
-	while (++i < n && scp[i])
+	while (i < n)
 	{
 		dcp[i] = scp[i];
-		if (scp[i] == (unsigned char)c)
-			return (dst + i + 1);
+		if (dcp[i] == (unsigned char)c)
+			return ((void *)&dcp[i + 1]);
+		i++;
 	}
 	return (NULL);
 }

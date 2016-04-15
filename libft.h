@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 15:52:46 by pcarre            #+#    #+#             */
-/*   Updated: 2016/04/01 16:25:01 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/15 18:49:20 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,13 @@ typedef struct		s_list
 
 void				ft_bzero(void *s, size_t n);
 void				*ft_memset(void *b, int c, size_t len);
-void				*ft_memcpy(void *restrict dst, const void *restrict src,
+void				*ft_memcpy(void *dst, const void *src,
 					size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
-void				*ft_memccpy(void *restrict dst, const void *restrict src,
-					int c, size_t n);
+void				*ft_memccpy(void *dst, const void *src,	int c, size_t n);
 void				*ft_memdup(void const *src, size_t size);
 
 void				ft_putchar(char c);
@@ -43,7 +42,7 @@ void				ft_putnbr(int n);
 void				ft_putstr(char const *s);
 void				ft_putstr_fd(char const *s, int fd);
 
-char				*ft_strdup(const char *s1);
+char				*ft_strdup(const char *s);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *restrict dst, const char *restrict src,
 					size_t n);

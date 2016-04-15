@@ -6,7 +6,7 @@
 /*   By: pcarre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 17:02:07 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 16:04:12 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/15 18:32:08 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,20 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*scp;
 	size_t			i;
 
-	i = -1;
+	i = 0;
 	dcp = (unsigned char*)dst;
 	scp = (unsigned char*)src;
-	while (scp[++i] && i < len)
-		dcp[i] = scp[i];
+	if (dcp > scp)
+		while (i < len)
+		{
+			dcp[len - 1] = scp[len - 1];
+			len--;
+		}
+	else
+		while (i < len)
+		{
+			dcp[i] = scp[i];
+			i++;
+		}
 	return (dst);
 }

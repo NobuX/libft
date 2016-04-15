@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 15:03:03 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 15:54:21 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/04 16:47:43 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char		*ft_itoa(int n)
 	char	*str;
 
 	if (n == -2147483648)
-		ft_strdup("-2147483648");
+		return (ft_strdup("-2147483648"));
 	len = ft_int_len(n);
 	tmp = n;
 	if ((str = ft_strnew(len)))
@@ -60,6 +60,5 @@ char		*ft_itoa(int n)
 			str[0] = '-';
 		return (str);
 	}
-	ft_error_malloc("ft_itoa");
 	return (NULL);
 }

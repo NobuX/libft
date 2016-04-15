@@ -6,7 +6,7 @@
 /*   By: pcarre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 16:39:24 by pcarre            #+#    #+#             */
-/*   Updated: 2016/02/26 17:35:50 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/15 18:40:03 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,14 @@
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	while (--n > 0)
-		((unsigned char*)dst)[n] = ((unsigned char*)src)[n];
+	unsigned char	*tmp_d;
+	unsigned char	*tmp_s;
+
+	tmp_d = (unsigned char *)dst;
+	tmp_s = (unsigned char *)src;
+	while (n--)
+		*tmp_d++ = *tmp_s++;
 	return (dst);
 }

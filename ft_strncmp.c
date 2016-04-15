@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/10 18:57:33 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 19:05:17 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/04 15:45:36 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 		else
 			n = s2_l;
 	}
-	return (ft_memcmp((const void*)s1, (const void*)s2, n));
+	return (ft_memcmp(s1, s2, n));
 }

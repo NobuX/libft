@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/08 14:12:57 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 16:03:19 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/04 16:08:21 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char	**ft_tabfill(char const *s, char c, char **tab)
+static char	**ft_tabfill(char const *s, char c, char **tab)
 {
 	size_t	start;
 	size_t	end;
@@ -43,7 +43,7 @@ char	**ft_tabfill(char const *s, char c, char **tab)
 	return (tab);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	char **tab;
 

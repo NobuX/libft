@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 16:04:36 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 15:55:04 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/15 18:34:50 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	while (s[i++])
-		;
+	if (*s)
+		while (s && s[i])
+			i++;
 	return (i);
 }

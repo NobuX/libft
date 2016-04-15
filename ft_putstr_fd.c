@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 17:16:25 by pcarre            #+#    #+#             */
-/*   Updated: 2016/03/10 15:59:17 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/01 16:59:46 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,5 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	if (!(s))
-		ft_error_null("ft_putstr_fd");
-	else
-		write(fd, s, ft_strlen(s));
+	write(fd, s, ft_strlen(s));
 }
