@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/10 19:09:53 by pcarre            #+#    #+#             */
-/*   Updated: 2016/04/15 20:58:05 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/22 19:12:56 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
 	if (s1 == NULL || s2 == NULL)
 		return (0);
-	while ((*s1 != '\0' || *s2 != '\0' ) && n > 0)
+	while ((*s1 != '\0' || *s2 != '\0') && n > 0)
 	{
 		if (*s1 != *s2)
 			return (0);
