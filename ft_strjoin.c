@@ -6,7 +6,7 @@
 /*   By: pcarre <pcarre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 17:13:12 by pcarre            #+#    #+#             */
-/*   Updated: 2016/04/15 21:41:02 by pcarre           ###   ########.fr       */
+/*   Updated: 2016/04/29 11:18:42 by pcarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,23 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+static char		*ft_strcp(char *dst, const char *src)
+{
+	int		i;
+
+	i = -1;
+	while (src[++i])
+		dst[i] = src[i];
+	return (dst);
+}
+
+char			*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 
 	if (!s1 || !s2 || !(str = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1)))
 		return (NULL);
-	str = ft_strdup(s1);
+	str = ft_strcp(str, s1);
 	str = ft_strcat(str, s2);
-	str[ft_strlen(str)] = '\0';
 	return (str);
 }
